@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/credentials/v2",
+    "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+  ],
+  "id": "https://frognet52.github.io/st-georges-ai-essentials/badge.json",
+  "type": ["VerifiableCredential", "OpenBadgeCredential"],
+  "name": "AI Essentials: Teachers (Module 1)",
+  "issuer": {
+    "id": "https://frognet52.github.io/st-georges-ai-essentials/#issuer",
+    "type": ["Profile"],
+    "name": "MSP Lab",
+    "description": "The IT Authority for Independent Schools. AI Essentials training delivered with Sait.Edu Limited (saitedu.net, company no. 10546381)."
+  },
+  "validFrom": "2026-10-28T00:00:00Z",
+  "credentialSubject": {
+    "type": ["AchievementSubject"],
+    "name": "Demo Learner",
+    "achievement": {
+      "id": "https://frognet52.github.io/st-georges-ai-essentials/badge.json#achievement",
+      "type": ["Achievement"],
+      "achievementType": "Badge",
+      "name": "AI Essentials: Teachers (Module 1)",
+      "description": "Awarded to St George's teachers who can use Microsoft 365 Copilot Chat safely and effectively for planning and resource-making, keep pupils' personal data out of AI tools in line with GDPR, and check AI output before it reaches a class or a parent.",
+      "criteria": {
+        "narrative": "1. Complete the Module 1 video (approx. 3 minutes).\n2. Score 3/3 on the safe-use knowledge check.\n3. Submit one teaching resource made with Microsoft 365 Copilot Chat, with no pupil personal data, plus a one-line note on what you checked or changed."
+      },
+      "image": { "id": "https://frognet52.github.io/st-georges-ai-essentials/badge.png", "type": "Image" },
+      "tag": ["AI literacy", "Data protection", "GDPR", "Microsoft 365 Copilot", "Teachers", "CPD"],
+      "alignment": [
+        {
+          "type": ["Alignment"],
+          "targetName": "EU AI Act, Article 4: AI literacy",
+          "targetUrl": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+        }
+      ]
+    }
+  }
+}

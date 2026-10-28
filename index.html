@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="MSP Lab AI Essentials open badge for teachers at St George's International School Luxembourg.">
+<meta property="og:title" content="AI Essentials Badge · MSP Lab">
+<meta property="og:description" content="Demo open badge and Module 1 video for St George's staff AI programme.">
+<meta property="og:image" content="https://frognet52.github.io/st-georges-ai-essentials/badge.png">
+<link rel="icon" href="badge.png">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>AI Essentials Badge · MSP Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+<style>
+/* Layout: credential certificate — badge + identity panel, then a single reading column of proof */
+:root{
+  --navy:#140A2A; --navy-2:#1E1238; --blue:#2EC4B6; --blue-2:#6A3FCB; --blue-3:#B9A3F0;
+  --bg:#F6F4FB; --surface:#FFFFFF; --fg:#1A1030; --muted:#5A5170; --line:#E2DCF0;
+  --accent:#5B34B8; --chip-bg:#EEE8FB; --ok:#137A4B; --ok-bg:#E2F5EC; --code-bg:#1E1238; --code-fg:#DCD3F2;
+  --display:"Poppins", system-ui, sans-serif;
+  --body:"Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#140A2A; --surface:#1E1238; --fg:#F3F0FA; --muted:#ADA3C8; --line:#3A2A60;
+  --accent:#4FD8CA; --chip-bg:#2A1A4A; --ok:#5FD39C; --ok-bg:#0E2E22; --code-bg:#0C0619; --code-fg:#DCD3F2; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#140A2A; --surface:#1E1238; --fg:#F3F0FA; --muted:#ADA3C8; --line:#3A2A60;
+  --accent:#4FD8CA; --chip-bg:#2A1A4A; --ok:#5FD39C; --ok-bg:#0E2E22; --code-bg:#0C0619; --code-fg:#DCD3F2; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.top{background:var(--navy);color:#fff}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px}
+.mark{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:.02em}
+.mark i{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--blue);color:var(--navy);font-style:normal;font-weight:700;font-size:13px}
+.top small{color:var(--blue-3);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.demo{background:var(--chip-bg);border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}
+.demo .wrap{padding-block:9px}
+.demo b{color:var(--fg);font-weight:600}
+.hero{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:40px;align-items:center;padding-block:40px 28px}
+.badge-svg{width:100%;height:auto;display:block;max-width:300px;filter:drop-shadow(0 18px 30px rgba(0,16,32,.28))}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:0 0 8px}
+h1{font-family:var(--display);font-weight:700;letter-spacing:-.02em;font-size:clamp(28px,4.4vw,42px);line-height:1.12;margin:0 0 10px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 20px;max-width:56ch}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 24px;margin:0 0 22px;padding:0}
+.facts div{min-width:0}
+.facts dt{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.facts dd{margin:2px 0 0;font-weight:500}
+.status{display:inline-flex;align-items:center;gap:8px;background:var(--ok-bg);color:var(--ok);font-weight:600;font-size:13px;border-radius:999px;padding:4px 12px}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 14px var(--body);padding:10px 16px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--fg);text-decoration:none;cursor:pointer}
+.btn.primary{background:var(--blue-2);border-color:var(--blue-2);color:#fff}
+.btn:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+main section{border-top:1px solid var(--line);padding-block:28px}
+h2{font-family:var(--display);font-weight:600;font-size:24px;margin:0 0 14px}
+.video{background:var(--navy);border-radius:12px;overflow:hidden;aspect-ratio:16/9;max-width:100%;display:grid;place-items:center;color:var(--blue-3);font-size:14px}
+.video video{width:100%;height:100%;display:block;background:var(--navy)}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.cols div{min-width:0}
+.cols h3{font-size:15px;font-weight:600;margin:0 0 4px}
+.cols p{margin:0;color:var(--muted);font-size:14px}
+ol.steps{list-style:none;counter-reset:s;margin:0;padding:0;display:grid;gap:14px;max-width:68ch}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;align-items:start}
+ol.steps li::before{content:counter(s);display:grid;place-items:center;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);font-weight:600;font-size:13px}
+.evidence{display:grid;gap:10px;max-width:68ch}
+.ev{display:flex;justify-content:space-between;gap:16px;padding:12px 14px;background:var(--surface);border:1px solid var(--line);border-radius:8px;flex-wrap:wrap}
+.ev span:first-child{font-weight:500;min-width:0}
+.ev span:last-child{color:var(--muted);font-size:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;padding:0;list-style:none}
+.tags li{background:var(--chip-bg);color:var(--accent);font-size:13px;font-weight:500;padding:4px 12px;border-radius:999px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:8px}
+summary{cursor:pointer;padding:12px 14px;font-weight:500}
+.code-wrap{position:relative;border-top:1px solid var(--line)}
+pre{margin:0;background:var(--code-bg);color:var(--code-fg);font:12.5px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;padding:16px;overflow-x:auto;border-radius:0 0 8px 8px}
+.copy{position:absolute;top:10px;right:10px}
+a{color:var(--accent)}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .wrap{padding-block:22px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+@media (max-width:720px){
+  .hero{grid-template-columns:minmax(0,1fr);gap:24px;padding-block:28px 20px}
+  .badge-svg{max-width:220px;margin:0 auto}
+  .cols{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:no-preference){.badge-svg{animation:rise .7s ease-out both}@keyframes rise{from{transform:translateY(8px) scale(.98)}to{transform:none}}}
+.wm{font-weight:700;font-size:22px;letter-spacing:-.02em;background:linear-gradient(90deg,#B9A3F0,#8D63E8 45%,#2EC4B6);-webkit-background-clip:text;background-clip:text;color:transparent}.wm.sm{font-size:inherit}
+</style>
+</head>
+<body>
+
+
+<header class="top"><div class="wrap">
+  <div class="mark wm">msplab</div>
+  <small>Credential check</small>
+</div></header>
+<div class="demo"><div class="wrap"><b>Demo credential.</b> Issued to a sample learner to show how St George's staff will earn and verify AI Essentials badges.</div></div>
+
+<div class="wrap">
+  <div class="hero">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="AI Essentials Teachers Module 1 badge" class="badge-svg">
+  <defs>
+    <radialGradient id="core" cx="50%" cy="38%" r="65%">
+      <stop offset="0" stop-color="#2A1A4A"/>
+      <stop offset="1" stop-color="#140A2A"/>
+    </radialGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#B9A3F0"/>
+      <stop offset="0.5" stop-color="#7C4DDB"/>
+      <stop offset="1" stop-color="#2EC4B6"/>
+    </linearGradient>
+    <path id="arcTop" d="M 42 300 A 258 258 0 0 1 558 300"/>
+    <path id="arcBot" d="M 28 300 A 272 272 0 0 0 572 300"/>
+  </defs>
+  <circle cx="300" cy="300" r="290" fill="#140A2A"/>
+  <circle cx="300" cy="300" r="282" fill="none" stroke="url(#ring)" stroke-width="6"/>
+  <circle cx="300" cy="300" r="246" fill="none" stroke="#2EC4B6" stroke-opacity=".35" stroke-width="1.5"/>
+  <text font-family="Poppins, sans-serif" font-weight="500" font-size="22" letter-spacing="7" fill="#B9A3F0">
+    <textPath href="#arcTop" startOffset="50%" text-anchor="middle">MSP LAB · ST GEORGE'S LUXEMBOURG</textPath>
+  </text>
+  <text font-family="Poppins, sans-serif" font-weight="500" font-size="20" letter-spacing="6" fill="#B9A3F0">
+    <textPath href="#arcBot" startOffset="50%" text-anchor="middle">DELIVERED WITH SAIT.EDU</textPath>
+  </text>
+  <circle cx="36" cy="300" r="5" fill="#2EC4B6"/>
+  <circle cx="564" cy="300" r="5" fill="#2EC4B6"/>
+  <circle cx="300" cy="300" r="232" fill="url(#core)"/>
+  <g transform="translate(300 180)">
+    <circle r="44" fill="#2EC4B6" fill-opacity=".12" stroke="#2EC4B6" stroke-width="2"/>
+    <path d="M0 -26 C3 -9 9 -3 26 0 C9 3 3 9 0 26 C-3 9 -9 3 -26 0 C-9 -3 -3 -9 0 -26 Z" fill="#FFFFFF"/>
+    <circle cx="22" cy="-22" r="5" fill="#2EC4B6"/>
+    <circle cx="-22" cy="22" r="3.5" fill="#B9A3F0"/>
+  </g>
+  <text x="300" y="298" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="700" font-size="56" letter-spacing="-1" fill="#FFFFFF">AI Essentials</text>
+  <text x="300" y="344" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="500" font-size="21" letter-spacing="6" fill="#B9A3F0">TEACHERS</text>
+  <g transform="translate(300 412)">
+    <rect x="-100" y="-24" width="200" height="48" rx="24" fill="#2EC4B6"/>
+    <text y="9" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="700" font-size="22" letter-spacing="4" fill="#140A2A">MODULE 1</text>
+  </g>
+  <text x="300" y="486" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="400" font-size="15" letter-spacing="3" fill="#FFFFFF" fill-opacity=".6">SAFE · PRACTICAL · CONFIDENT</text>
+</svg>
+
+    <div>
+      <p class="eyebrow">Open Badge · Module 1</p>
+      <h1>AI Essentials for Teachers</h1>
+      <p class="sub">The holder uses Microsoft 365 Copilot Chat safely for planning and resource-making, keeps pupils' personal data out of AI tools, and checks every AI draft before it reaches a class or a parent.</p>
+      <dl class="facts">
+        <div><dt>Awarded to</dt><dd>Demo Learner</dd></div>
+        <div><dt>Status</dt><dd><span class="status">Valid (demo)</span></dd></div>
+        <div><dt>Issued by</dt><dd>MSP Lab, with Sait.Edu</dd></div>
+        <div><dt>Issued on</dt><dd>28 October 2026</dd></div>
+        <div><dt>Credential ID</dt><dd style="font-size:13px;word-break:break-all">MSPL-SG-AIE-T1-0001</dd></div>
+        <div><dt>Format</dt><dd>Open Badges 3.0</dd></div>
+      </dl>
+      <div class="actions">
+        <a class="btn primary" id="li" href="https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&amp;name=AI%20Essentials%3A%20Teachers%20(Module%201)&amp;organizationName=MSP%20Lab&amp;issueYear=2026&amp;issueMonth=10&amp;certId=MSPL-SG-AIE-T1-0001" target="_blank" rel="noopener">Add to LinkedIn</a>
+        <a class="btn" href="#module">Watch the module</a>
+        <a class="btn" href="badge.json">Badge data (JSON)</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section id="module">
+    <h2>Module 1: Copilot, used safely</h2>
+    <div class="video" id="video"><video controls playsinline preload="metadata" poster="poster.jpg" src="ai-essentials-module1.mp4"></video></div>
+  </section>
+
+  <section>
+    <h2>What the holder can do</h2>
+    <div class="cols">
+      <div><h3>Use the right tool</h3><p>Works in Microsoft 365 Copilot Chat, signed in with a St George's account and covered by enterprise data protection, never a personal app.</p></div>
+      <div><h3>Protect pupils</h3><p>Never puts names, learning needs, medical or safeguarding details into AI. Describes the need, not the child, in line with GDPR.</p></div>
+      <div><h3>Stay the professional</h3><p>Checks every Copilot draft for accuracy, level and tone, and makes it their own before it reaches a class.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>How it is earned</h2>
+    <ol class="steps">
+      <li><div><strong>Watch Module 1.</strong> A three-minute video covering three safe-use rules and three classroom wins.</div></li>
+      <li><div><strong>Pass the knowledge check.</strong> Three scenario questions, all answered correctly.</div></li>
+      <li><div><strong>Submit one real resource.</strong> A teaching resource made with Copilot Chat, with no pupil data, plus a one-line note on what was checked or changed.</div></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Evidence on file</h2>
+    <div class="evidence">
+      <div class="ev"><span>Module 1 video completed</span><span>21 Oct 2026</span></div>
+      <div class="ev"><span>Knowledge check: 3 of 3</span><span>21 Oct 2026</span></div>
+      <div class="ev"><span>Year 9 retrieval quiz on the causes of the First World War</span><span>Reviewed by MSP Lab</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills and alignment</h2>
+    <ul class="tags"><li>AI literacy</li><li>GDPR</li><li>Microsoft 365 Copilot</li><li>Lesson planning</li><li>Professional judgement</li></ul>
+    <p style="margin:0 0 18px;max-width:68ch;color:var(--muted)">Supports the AI-literacy duty in <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" target="_blank" rel="noopener">Article 4 of the EU AI Act</a> and staff GDPR responsibilities.</p>
+    <details>
+      <summary>View credential data (Open Badges 3.0)</summary>
+      <div class="code-wrap">
+        <button class="btn copy" id="copyBtn" type="button">Copy</button>
+        <pre id="json">{
+  &quot;@context&quot;: [
+    &quot;https://www.w3.org/ns/credentials/v2&quot;,
+    &quot;https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json&quot;
+  ],
+  &quot;id&quot;: &quot;https://frognet52.github.io/st-georges-ai-essentials/badge.json&quot;,
+  &quot;type&quot;: [&quot;VerifiableCredential&quot;, &quot;OpenBadgeCredential&quot;],
+  &quot;name&quot;: &quot;AI Essentials: Teachers (Module 1)&quot;,
+  &quot;issuer&quot;: {
+    &quot;id&quot;: &quot;https://frognet52.github.io/st-georges-ai-essentials/#issuer&quot;,
+    &quot;type&quot;: [&quot;Profile&quot;],
+    &quot;name&quot;: &quot;MSP Lab&quot;,
+    &quot;description&quot;: &quot;The IT Authority for Independent Schools. AI Essentials training delivered with Sait.Edu Limited (saitedu.net, company no. 10546381).&quot;
+  },
+  &quot;validFrom&quot;: &quot;2026-10-28T00:00:00Z&quot;,
+  &quot;credentialSubject&quot;: {
+    &quot;type&quot;: [&quot;AchievementSubject&quot;],
+    &quot;name&quot;: &quot;Demo Learner&quot;,
+    &quot;achievement&quot;: {
+      &quot;id&quot;: &quot;https://frognet52.github.io/st-georges-ai-essentials/badge.json#achievement&quot;,
+      &quot;type&quot;: [&quot;Achievement&quot;],
+      &quot;achievementType&quot;: &quot;Badge&quot;,
+      &quot;name&quot;: &quot;AI Essentials: Teachers (Module 1)&quot;,
+      &quot;description&quot;: &quot;Awarded to St George&#x27;s teachers who can use Microsoft 365 Copilot Chat safely and effectively for planning and resource-making, keep pupils&#x27; personal data out of AI tools in line with GDPR, and check AI output before it reaches a class or a parent.&quot;,
+      &quot;criteria&quot;: {
+        &quot;narrative&quot;: &quot;1. Complete the Module 1 video (approx. 3 minutes).\n2. Score 3/3 on the safe-use knowledge check.\n3. Submit one teaching resource made with Microsoft 365 Copilot Chat, with no pupil personal data, plus a one-line note on what you checked or changed.&quot;
+      },
+      &quot;image&quot;: { &quot;id&quot;: &quot;https://frognet52.github.io/st-georges-ai-essentials/badge.png&quot;, &quot;type&quot;: &quot;Image&quot; },
+      &quot;tag&quot;: [&quot;AI literacy&quot;, &quot;Data protection&quot;, &quot;GDPR&quot;, &quot;Microsoft 365 Copilot&quot;, &quot;Teachers&quot;, &quot;CPD&quot;],
+      &quot;alignment&quot;: [
+        {
+          &quot;type&quot;: [&quot;Alignment&quot;],
+          &quot;targetName&quot;: &quot;EU AI Act, Article 4: AI literacy&quot;,
+          &quot;targetUrl&quot;: &quot;https://eur-lex.europa.eu/eli/reg/2024/1689/oj&quot;
+        }
+      ]
+    }
+  }
+}
+</pre>
+      </div>
+    </details>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <span><b class="wm sm">msplab</b> · The IT Authority for Independent Schools</span><span>Training delivered with <a href="https://saitedu.net" target="_blank" rel="noopener">Sait.Edu</a></span>
+</div></footer>
+
+<script>
+document.getElementById('copyBtn').addEventListener('click', function(){
+  var b=this, t=document.getElementById('json').textContent;
+  var done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1600)};
+  try{navigator.clipboard.writeText(t).then(done,function(){sel()})}catch(e){sel()}
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('json'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Press Ctrl+C'}
+});
+</script>
+
+</body>
+</html>
